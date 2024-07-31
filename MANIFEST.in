@@ -1,0 +1,2 @@
+include FinanceSentimentAnalyzer/trained_models/*.pth
+include FinanceSentimentAnalyzer/trained_models/*.pkl
