@@ -18,7 +18,7 @@ pip install git+https://github.com/MatthewW05/FinanceSentimentAnalyzer.git
 ### Predicting a headline's sentiment using the pre-trained model
 
 ```python
-from FinanceSentimentAnalyzer import predict_sentiment
+from FinanceSentimentAnalyzer import predict_headline_sentiment
 
 headline = "Nvidia Stock Rises. How Earnings From Microsoft and Apple Could Drive It Higher."
 
@@ -27,7 +27,7 @@ headline = "Nvidia Stock Rises. How Earnings From Microsoft and Apple Could Driv
 prediction = predict_headline_sentiment(headline)
 prediction = "Positive" if round(prediction) == 1 else "Negative"
    
-print(f"Prediction for \'{sample_headline}\': {prediction}")
+print(f"Prediction for \'{headline}\': {prediction}")
 ```
 
 ### Loading your own model
@@ -41,7 +41,7 @@ model, vocab = load_model_and_vocab('path/to/your/model', 'path/to/your/vocab')
 prediction = predict_headline_sentiment(headline, model, vocab)
 prediction = "Positive" if round(prediction) == 1 else "Negative"
 
-print(f"Prediction for \'{sample_headline}\': {prediction}")
+print(f"Prediction for \'{headline}\': {prediction}")
 ```
 
 
