@@ -64,7 +64,7 @@ __default_tokenizer = get_tokenizer('basic_english')
 
 def predict_headline_sentiment(headline, model=__default_model, vocab=__default_model_vocab, tokenizer=__default_tokenizer):
     model.eval()  # Evaluation mode
-    tokens = torch.tensor([vocab[token] for token in tokenizer(headline)], dtype=torch.long).unsqueeze(0).to(device)
+    tokens = torch.tensor([vocab[token] for token in tokenizer(headline)], dtype=torch.long).unsqueeze(0).to(__device)
     with torch.no_grad():
         output = model(tokens)
         prediction = output.item()
