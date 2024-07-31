@@ -24,7 +24,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from predict_sentiment import load_model_and_vocab, predict_headline_sentiment
+from .predict_sentiment import load_model_and_vocab, predict_headline_sentiment
 
 __author__ = "Matthew Wong"
 
