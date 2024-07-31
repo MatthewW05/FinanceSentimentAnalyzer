@@ -19,7 +19,7 @@ setup(
         'scikit-learn==1.5.1',
         'chardet==5.2.0',
     ],
-    python_requires='>=3.8',
+    python_requires='>=3.8,<3.12',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
