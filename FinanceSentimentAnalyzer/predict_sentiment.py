@@ -21,6 +21,9 @@ MAX_VOCAB_SIZE = 20000
 EMBEDDING_DIM = 100
 BATCH_SIZE = 16
 
+__dir_path = os.path.dirname(os.path.realpath(__file__))
+__device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 class SentimentModel(nn.Module):
     def __init__(self, vocab_size, embedding_dim):
         super(SentimentModel, self).__init__()
@@ -48,12 +51,9 @@ def load_model_and_vocab(model_path, vocab_path, embedding_dim=EMBEDDING_DIM):
     vocab_size = len(vocab)
 
     model = SentimentModel(vocab_size, embedding_dim)
-    model.load_state_dict(torch.load(model_path))
+    model.load_state_dict(torch.load(model_path, map_location=torch.device(__device)))
     model.eval()  # Set the model to evaluation mode
     return model, vocab
-
-__dir_path = os.path.dirname(os.path.realpath(__file__))
-__device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 __model_path = f'{__dir_path}\\trained_models\\sentiment_analysis.pth'
 __vocab_path = f'{__dir_path}\\trained_models\\sentiment_analysis.pkl'
