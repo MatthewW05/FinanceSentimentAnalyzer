@@ -31,7 +31,7 @@ print(f"Prediction for \'{headline}\': {prediction}")
 ```
 
 ### Loading your own model
-When loading your own model, the first layer MUST vectorize the input
+When loading your own model, you must include both the model and and the used vocabulary
 
 ```python
 from FinanceSentimentAnalyzer import load_model_and_vocab, predict_headline_sentiment
