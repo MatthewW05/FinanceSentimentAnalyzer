@@ -12,7 +12,7 @@ setup(
     author_email='wongmatthew6767@gmail.com',
     url='https://github.com/MatthewW05/FinanceSentimentAnalyzer',
     install_requires=[
-        'torch<=2.4',
+        'torch<2.4',
         'torchtext==0.18.0',
         'pandas==2.2.2',
         'numpy<=1.26.4',
